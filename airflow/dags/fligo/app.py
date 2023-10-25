@@ -77,7 +77,7 @@ def upload_csv_to_postgresql():
         "database": "testfligoo",
         "user": "fligoo",
         "password": "fligoo",
-        "port": 5432  # Default PostgreSQL port
+        "port": 5432 
     }
     current_date = datetime.now().strftime("%Y-%m-%d")
     table_name = 'test_data'
@@ -113,7 +113,6 @@ dag = DAG(
     tags=['example'],
 )
 
-# Create a PythonOperator to run the fetch_and_save_flight_data function
 fetch_flight_data_task = PythonOperator(
     task_id='fetch_flight_data',
     python_callable=fetch_and_save_flight_data,
